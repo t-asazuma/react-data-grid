@@ -1,0 +1,49 @@
+import {Meta, Story, Canvas, ArgsTable} from '@storybook/addon-docs';
+import BasicStories from "./basic.stories";
+import {SimpleMockData, SimpleMockDataProps} from '../mock/SimpleMockData'
+import {Column} from '../../src/types/Columns'
+import {ReactDataGridProps} from '../../src/ReactDataGrid/ReactDataGrid'
+
+<Meta title="ReactDataGrid/Example/Basic" of={BasicStories}/>
+
+# test
+
+```ts
+import ReactDataGrid from "./ReactDataGrid";
+const SimpleMockColumns: Array<Column<SimpleMockDataProps>> = [
+  {
+    title: 'id',
+    style: {width: '100px'},
+    selector: row => row.id
+  },
+  {
+    title: 'title',
+    style: {width: '300px'},
+    selector: row => row.title
+  },
+  {
+    title: 'カテゴリ',
+    style: {width: '200px'},
+    selector: row => row.category
+  },
+  {
+    title: 'メーカー',
+    style: {width: '200px'},
+    selector: row => row.maker
+  },
+  {
+    title: '価格',
+    style: {width: '200px'},
+    selector: row => row.price
+  }
+]
+const App = () => {
+  <ReactDataGrid
+}
+```
+
+<ArgsTable of={ReactDataGridProps}/>
+
+<Canvas>
+    <Story id="example-basic--default"/>
+</Canvas>
